@@ -16,6 +16,18 @@ public class SimpleFunctions {
         
         return roundedNumbers;
     }
+
+    //Task2: Removes the first character from every element in a list.
+    //If a list has no character remove it from the output.
+    public List<String> Task2(List<String> inputList){
+        List<String> outputList = new ArrayList<>();
+        for(String element : inputList){
+            if(element.length() > 0){ //checks if the element has characters
+                //Removes the first character and adds it to the output list
+                outputList.add(element.substring(1));
+            }
+        }return outputList;
+    }
     
     private int roundUpToNearestMultipleOf100(int num) {
         if (num % 100 == 0) {
