@@ -5,6 +5,40 @@ package sdp.prac2;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import java.util.List;
+import java.util.ArrayList;
 
 class AppTest {
+
+    
+    ////////////////////////////////////////////////////////////////////////////////////////////
+    //Test for task 4
+    @Test
+    public void testEqualSizeLists() {
+        // Arrange
+        List<Integer> list1 = List.of(1, 2, 3, 4);
+        List<Integer> list2 = List.of(5, 6, 7, 8);
+        
+        // Act
+        List<Integer> result = ListMultiplier.multiplyLists(list1, list2);
+        
+        // Assert
+        assertNotNull(result);
+        assertEquals(List.of(8, 14, 18, 20), result);
+    }
+
+    @Test
+    public void testDifferentSizeLists() {
+        // Arrange
+        List<Integer> list1 = List.of(1, 2, 3);
+        List<Integer> list2 = List.of(4, 5, 6, 7);
+        
+        // Act
+        List<Integer> result = ListMultiplier.multiplyLists(list1, list2);
+        
+        // Assert
+        assertNull(result);
+    }
+    //////////////////////////////////////////////////////////////////////////////////////////////////
 }
+
