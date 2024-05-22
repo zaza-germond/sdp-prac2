@@ -2,6 +2,7 @@ package sdp.prac2;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 public class SimpleFunctions {
     //public SimpleFunctions() {}
@@ -28,6 +29,26 @@ public class SimpleFunctions {
             }
         }return outputList;
     }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////
+    //Task 3: returns true only if there are a matching number of brackets in a string.
+    public static boolean areParenthesesBalanced(String str) {
+        Stack<Character> stack = new Stack<>(); // Stack to keep track of opening parentheses
+        
+        for (char ch : str.toCharArray()) { // Iterate through each character in the input string
+            if (ch == '(') {
+                stack.push(ch);
+            } else if (ch == ')') {
+                if (stack.isEmpty()) {
+                    return false;
+                }
+                stack.pop();  // Pop the stack as we have found a matching pair
+            }
+        }
+        
+        return stack.isEmpty();
+    }
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////
     
     private int roundUpToNearestMultipleOf100(int num) {
         if (num % 100 == 0) {
