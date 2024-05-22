@@ -78,4 +78,34 @@ class AppTest {
         assertEquals(expectedOutput, actualOutput, "The numbers should be rounded up to the nearest multiple of 100.");
     }
 
+    @Test
+    public void testTask3_balancedAndNestedCorrectly() {
+        //Arrange
+        //Creates an instance of the class which contains the method to test
+        SimpleFunctions task3Test = new SimpleFunctions();
+        //define the input as some string that containes balanced and nested brackets
+        String input = "(a(b)c)";
+        //Act
+        //Get the result of running the input through the method
+        boolean result = task3Test.areParenthesesBalanced(input);
+        //Assert
+        //Checks that the result is indeed true. If it fails the test then the message will be displayed
+        assertTrue(result, "The string has balanced and correctly nested brackets.");
+    }
+
+    @Test
+    public void testTask3_unbalancedBrackets() {
+        //Arrange
+        //Creates an instance of the class which contains the method to test
+        SimpleFunctions task3Test = new SimpleFunctions();
+        //define the input as some string that containes unbalanced brackets
+        String input = "(a(b)c";
+        //Act
+        //Get the result of running the input through the method
+        boolean result = task3Test.areParenthesesBalanced(input);
+        //Assert
+        //Checks that the result is indeed false. If it fails the test then the message will be displayed
+        assertFalse(result, "The string has unbalanced brackets.");
+    }
+
 }
