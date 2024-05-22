@@ -5,6 +5,14 @@ import java.util.List;
 
 public class SimpleFunctions {
     //public SimpleFunctions() {}
+     public List<Integer> Task1(List<Integer> a, List<Integer> b){ //g22g8170
+        List<Integer> finallist=new ArrayList<>();
+
+        for (int i=0;i<a.size();i++){
+            finallist.add(a.get(i)+b.get(i));
+        }
+        return finallist;
+    }
     
     public List<Integer> Task6(List<Integer> numbers) {
         List<Integer> roundedNumbers = new ArrayList<>();
